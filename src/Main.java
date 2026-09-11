@@ -38,6 +38,8 @@ public class Main {
         principal.getEmployeesByMonth();
         System.out.println("\nfuncionarios maior idade\n");
         principal.getEmployeesByYear();
+        System.out.println("\nfuncionarios ordem alfabetica\n");
+        principal.orderEmployees();
 
     }
 }

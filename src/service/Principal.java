@@ -1,8 +1,6 @@
 package service;
 
 import model.Employee;
-import model.People;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Period;
@@ -87,6 +85,14 @@ public class Principal {
         }
         int oldYears = Period.between(year, LocalDate.now()).getYears();
         System.out.println(peopleOld + " " + oldYears);
+    }
+
+    //buscar funcionarios por ordem alfabetica
+    public void orderEmployees() {
+        employees.sort(Comparator.comparing(Employee::getName));
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
     }
 
 

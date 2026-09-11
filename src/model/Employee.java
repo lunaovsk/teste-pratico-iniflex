@@ -49,6 +49,11 @@ public class Employee extends People{
         return formatter.format(salary);
     }
 
+    //metodo adicional para aplicar aumento salarial
+    public void raiseSalary(BigDecimal raise){
+        this.salary = salary.multiply(raise);
+    }
+
     // Metodo para printar funcionarios
     @Override
     public String toString() {

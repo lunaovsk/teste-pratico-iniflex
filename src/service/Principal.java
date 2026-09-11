@@ -114,8 +114,7 @@ public class Principal {
         scale – scale of the BigDecimal quotient to be returned.
         roundingMode – rounding mode to apply.
     * */
-    public void minSalary() {
-        final BigDecimal  min = new BigDecimal("1212.00");
+    public void minSalary(final BigDecimal min) {
         for (Employee employee : employees) {
             BigDecimal qtdSalary = employee.getSalary().divide(min, 2, RoundingMode.HALF_UP);
             System.out.println(employee.getName() + "\t" + employee.formatSalary(qtdSalary));

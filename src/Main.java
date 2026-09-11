@@ -43,7 +43,7 @@ public class Main {
         System.out.println("\ntotal salario funcionarios\n");
         principal.sumSalary();
         System.out.println("\nquantidade de salarios minimos por funcionarios\n");
-        principal.minSalary();
+        principal.minSalary(new BigDecimal("1212.00"));
 
     }
 }

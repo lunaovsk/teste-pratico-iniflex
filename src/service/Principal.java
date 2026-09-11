@@ -1,8 +1,11 @@
 package service;
 
 import model.Employee;
+import model.People;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.*;
 
 public class Principal {
@@ -69,6 +72,21 @@ public class Principal {
                 System.out.println(employee);
             }
         }
+    }
+
+    //imprimir unico funcionario com a maior idade
+    public void getEmployeesByYear() {
+        String peopleOld = "";
+        LocalDate year = LocalDate.MAX;
+        
+        for (Employee emp : employees) {
+            if (emp.getBirthday().isBefore(year)) {
+                year = emp.getBirthday();
+                peopleOld = emp.getName();
+            }
+        }
+        int oldYears = Period.between(year, LocalDate.now()).getYears();
+        System.out.println(peopleOld + " " + oldYears);
     }
 
 

@@ -36,6 +36,8 @@ public class Main {
         principal.groupEmployees();
         System.out.println("\nlista funcionarios mes 10 e 12\n");
         principal.getEmployeesByMonth();
+        System.out.println("\nfuncionarios maior idade\n");
+        principal.getEmployeesByYear();
 
     }
 }

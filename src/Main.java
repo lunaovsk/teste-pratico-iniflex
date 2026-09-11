@@ -32,5 +32,10 @@ public class Main {
         principal.removeEmployeeByName("João");
         System.out.println("\nnova lista com aumento\n");
         principal.raise(new BigDecimal("1.10"));
+        System.out.println("\nmap agrupado por funcao\n");
+        principal.groupEmployees();
+        System.out.println("\nlista funcionarios mes 10 e 12\n");
+        principal.getEmployeesByMonth();
+
     }
 }

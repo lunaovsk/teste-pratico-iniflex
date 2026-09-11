@@ -2,6 +2,7 @@ package service;
 
 import model.Employee;
 import java.math.BigDecimal;
+import java.math.*;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.*;
@@ -103,6 +104,23 @@ public class Principal {
 
         }
         System.out.println(employees.getFirst().formatSalary(total));
+    }
+
+    //metodo para verificar quantos salarios minimos ganha cada funcionario com base em 1212.00
+    /*
+    Valores necessários para o BigDecimal .divide de acordo com a documentação;
+    * Params:
+        divisor – value by which this BigDecimal is to be divided.
+        scale – scale of the BigDecimal quotient to be returned.
+        roundingMode – rounding mode to apply.
+    * */
+    public void minSalary() {
+        final BigDecimal  min = new BigDecimal("1212.00");
+        for (Employee employee : employees) {
+            BigDecimal qtdSalary = employee.getSalary().divide(min, 2, RoundingMode.HALF_UP);
+            System.out.println(employee.getName() + "\t" + employee.formatSalary(qtdSalary));
+        }
+
     }
 
 

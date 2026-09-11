@@ -42,6 +42,8 @@ public class Main {
         principal.orderEmployees();
         System.out.println("\ntotal salario funcionarios\n");
         principal.sumSalary();
+        System.out.println("\nquantidade de salarios minimos por funcionarios\n");
+        principal.minSalary();
 
     }
 }

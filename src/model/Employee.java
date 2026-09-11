@@ -43,7 +43,7 @@ public class Employee extends People{
     }
 
     // metodo auxiliar para formatar salario com separador de milhar como ponto e decimal como virgula
-    public String formatSalary(){
+    public String formatSalary(BigDecimal salary){
         DecimalFormatSymbols symbols = new DecimalFormatSymbols(new Locale("pt", "BR"));
         DecimalFormat formatter = new DecimalFormat("#,##0.00", symbols);
         return formatter.format(salary);
@@ -59,7 +59,7 @@ public class Employee extends People{
     public String toString() {
         return "Nome: " + getName() +
                 " | Data Nascimento: " + formatterDate() +
-                " | Salário: R$ " + formatSalary() +
+                " | Salário: R$ " + formatSalary(salary) +
                 " | Função: " + this.role;
     }
 }

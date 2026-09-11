@@ -1,12 +1,9 @@
 package service;
 
 import model.Employee;
-import model.People;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Principal {
     List<Employee> employees;
@@ -38,12 +35,42 @@ public class Principal {
 
     }
 
+    //orquestracao do metodo de aumento salarial
     public void raise(BigDecimal raise) {
         for (Employee employee : employees) {
             employee.raiseSalary(raise);
         }
         getEmployees();
     }
+
+    //criacao do map para agrupar funcionarios por funcao
+    public void groupEmployees() {
+        Map<String, List<Employee>> groupEmployees = new HashMap<>();
+
+        for (Employee employee : employees) {
+            String r = employee.getRole();
+            if (!groupEmployees.containsKey(r)) {
+                groupEmployees.put(r, new ArrayList<>());
+            }
+            groupEmployees.get(r).add(employee);
+        }
+        for (String r : groupEmployees.keySet()) {
+            System.out.println(r + ":\t" + groupEmployees.get(r));
+        }
+
+
+    }
+
+    //imprime funcionarios que fazem apenas aniversario no mes 10 e 12
+    public void getEmployeesByMonth() {
+        for (Employee employee : employees) {
+            int month = employee.getBirthday().getMonthValue();
+            if (month == 10 || month == 12) {
+                System.out.println(employee);
+            }
+        }
+    }
+
 
 
 

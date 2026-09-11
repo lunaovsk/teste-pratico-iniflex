@@ -28,12 +28,4 @@ public class People {
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
-
-    @Override
-    public String toString() {
-        return "People{" +
-                "name='" + name + '\'' +
-                ", birthday=" + birthday +
-                '}';
-    }
 }

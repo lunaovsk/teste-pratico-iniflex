@@ -16,7 +16,7 @@ public class Principal {
 
     //adiciona todos os funcionarios em uma lista
     public void addEmployee(List<Employee> newEmployees) {
-        this.employees.addAll(newEmployees);
+        employees.addAll(newEmployees);
     }
 
     //Traz todos os funcionarios cadastrados e retorna a lista
@@ -24,6 +24,17 @@ public class Principal {
         for (Employee employee : employees) {
             System.out.println(employee);
         }
+    }
+
+    //remover funcionario por nome
+    public void removeEmployeeByName(String name) {
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).getName().equals(name)) {
+                employees.remove(i);
+            }
+        }
+        getEmployees();
+
     }
 
 

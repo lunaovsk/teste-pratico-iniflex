@@ -30,5 +30,7 @@ public class Main {
         principal.getEmployees();
         System.out.println("\nnova lista\n");
         principal.removeEmployeeByName("João");
+        System.out.println("\nnova lista com aumento\n");
+        principal.raise(new BigDecimal("1.10"));
     }
 }

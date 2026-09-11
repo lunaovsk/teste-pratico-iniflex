@@ -40,6 +40,8 @@ public class Main {
         principal.getEmployeesByYear();
         System.out.println("\nfuncionarios ordem alfabetica\n");
         principal.orderEmployees();
+        System.out.println("\ntotal salario funcionarios\n");
+        principal.sumSalary();
 
     }
 }

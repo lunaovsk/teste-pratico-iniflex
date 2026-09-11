@@ -95,6 +95,16 @@ public class Principal {
         }
     }
 
+    //somar o salário de todos os funcionarios
+    public void sumSalary() {
+        BigDecimal total = BigDecimal.ZERO;
+        for (Employee employee : employees) {
+            total = total.add(employee.getSalary());
+
+        }
+        System.out.println(employees.getFirst().formatSalary(total));
+    }
+
 
 
 

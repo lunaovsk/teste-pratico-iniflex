@@ -3,6 +3,7 @@ package service;
 import model.Employee;
 import model.People;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +36,13 @@ public class Principal {
         }
         getEmployees();
 
+    }
+
+    public void raise(BigDecimal raise) {
+        for (Employee employee : employees) {
+            employee.raiseSalary(raise);
+        }
+        getEmployees();
     }
 
 

@@ -1,8 +1,11 @@
 package model;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class Employee extends People{
 
@@ -33,9 +36,17 @@ public class Employee extends People{
         this.salary = salary;
     }
 
+    // metodo auxiliar para formatar data
     public String formatterDate(){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return formatter.format(getBirthday());
+    }
+
+    // metodo auxiliar para formatar salario com separador de milhar como ponto e decimal como virgula
+    public String formatSalary(){
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols(new Locale("pt", "BR"));
+        DecimalFormat formatter = new DecimalFormat("#,##0.00", symbols);
+        return formatter.format(salary);
     }
 
     // Metodo para printar funcionarios
@@ -43,7 +54,7 @@ public class Employee extends People{
     public String toString() {
         return "Nome: " + getName() +
                 " | Data Nascimento: " + formatterDate() +
-                " | Salário: R$ " + this.salary +
+                " | Salário: R$ " + formatSalary() +
                 " | Função: " + this.role;
     }
 }
